@@ -1,0 +1,5 @@
+extends layout
+
+block content
+  form(action='/retreats/#{retreat._id}?_method=PUT' method="POST")
+    include ./retreats-form.jade

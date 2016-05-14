@@ -4,7 +4,9 @@ var Retreat = require('../models/retreat.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Retreat.find().exec(function(err, retreats) {
+  Retreat.find()
+         .sort('startsOn')
+         .exec(function(err, retreats) {
     res.render('retreats-index', { retreats: retreats });  
   });
 });

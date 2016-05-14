@@ -4,15 +4,29 @@ var Retreat = require('../models/retreat.js')
 
 /* NEW  */
 router.get('/new', function(req, res, next) {
-  res.render('retreats-new');
+  res.render('retreats-new', { retreat: new Retreat() });
+});
+
+router.get('/edit/:id', function(req, res, next) {
+  Retreat.findById(req.params.id).exec(function(err, retreat) {
+    res.render('retreats-edit', { retreat: retreat });
+  });
+});
+
+router.put('/:id', function(req, res, next) {
+  Retreat.findById(req.params.id).exec(function(err, retreat) {
+    req.body.startsOn = new Date(req.body.startsOnMonth + "-" + req.body.startsOnDay + "-" + req.body.startsOnYear);
+    
+    Retreat.findByIdAndUpdate(req.params.id, req.body, function(err, retreat) {
+      res.redirect('/');
+    });
+  });
 });
 
 /* CREATE */
 router.post('/', function(req, res, next) {
+  console.log(req.body)
   req.body.startsOn = new Date(req.body.startsOnMonth + "-" + req.body.startsOnDay + "-" + req.body.startsOnYear);
-  req.body.startsOnMonth = undefined;
-  req.body.startsOnDay = undefined;
-  req.body.startsOnYear = undefined;
   
   var retreat = new Retreat(req.body);
   retreat.save(function(err, retreat) {

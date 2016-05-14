@@ -1,9 +1,22 @@
+// attempts to run in docker and link to mongo container
+// docker run --name sesh-finder --link mongo:mongo -d sesh-finder
+// docker run --name sesh-finder -v $PWD:/usr/src/app -d sesh-finder
+
+var mongoose  = require('mongoose');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+console.log(process.env.MONGODB_PORT_27017_TCP_ADDR)
+
 if (process.env.NODE_ENV == 'development') {
   require('dotenv').load();
+  mongoose.connect(process.env.MONGODB_URI);
+  // mongoose.connect('mongodb://' + process.env.MONGODB_PORT_27017_TCP_ADDR + ':' + process.env.MONGODB_PORT_27017_TCP_PORT + '/sesh-finder');
+} else {
+  mongoose.connect(process.env.MONGODB_URI);
 }
+
+console.log(process.env.NODE_ENV)
 
 var express = require('express');
 var path = require('path');
@@ -11,9 +24,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var mongoose  = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

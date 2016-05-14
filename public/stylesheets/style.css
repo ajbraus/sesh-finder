@@ -1,8 +1,25 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.brand {
+  padding:10px;
 }
 
-a {
-  color: #00B7FF;
+.brand a {
+  font-size: 2em;
+  text-decoration: none;
+  color:inherit;
+}
+legend {
+  padding: 0 0 5px 0;
+  font-size: 1.3em;
+  width: 100%;
+  border-bottom: 1px solid #EFEFF0;
+  margin-bottom: 1em;
+}
+
+tr:hover[onclick] {
+  background:#F7F7F7;
+  cursor:pointer;
+}
+
+.u-text-muted {
+  color:grey;
 }

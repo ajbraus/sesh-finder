@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  each retreat in retreats
-    p #{retreat.name}
+  table.u-full-width
+    tr
+      th Name
+      th Cost
+      th When
+      th Center
+      th Tradition
+      th Update
+    each retreat in retreats
+      tr(onclick="window.document.location='#{retreat.url}';")
+        td #{retreat.name}
+        td #{retreat.price}
+        td #{new Date(retreat.startsOn).toDateString()}
+        td #{retreat.center}
+        td #{retreat.tradition}
+        td 
+          a(href="/edit/#{retreat._id}") Edit

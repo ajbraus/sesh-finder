@@ -1,0 +1,17 @@
+{
+  "name": "sesh-finder",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Adam Braus <ajbraus@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ajbraus/sesh-finder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

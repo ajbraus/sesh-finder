@@ -2,111 +2,112 @@ extends layout
 
 block content
   form(action='/retreats' method="POST")
-    p
-      label Name
-      br
-      input(name="name" autofocus='true')
-    p
-      label Meditation Center
-      br
-      input(name="center")
-    p
-      label Tradition
-      br
-      input(name="tradition")
-    p
-      label Teacher(s)
-      br
-      input(name="teacher")
-    p
-      label Starts On
-      br
-      select(name='startsOnMonth')
-        option(value="")  - Month - 
-        option(value='January') January
-        option(value='Febuary') Febuary
-        option(value='March') March
-        option(value='April') April
-        option(value='May') May
-        option(value='June') June
-        option(value='July') July
-        option(value='August') August
-        option(value='September') September
-        option(value='October') October
-        option(value='November') November
-        option(value='December') December
-      select(name='startsOnDay')
-        option(value="")  - Day - 
-        option(value='1') 1
-        option(value='2') 2
-        option(value='3') 3
-        option(value='4') 4
-        option(value='5') 5
-        option(value='6') 6
-        option(value='7') 7
-        option(value='8') 8
-        option(value='9') 9
-        option(value='10') 10
-        option(value='11') 11
-        option(value='12') 12
-        option(value='13') 13
-        option(value='14') 14
-        option(value='15') 15
-        option(value='16') 16
-        option(value='17') 17
-        option(value='18') 18
-        option(value='19') 19
-        option(value='20') 20
-        option(value='21') 21
-        option(value='22') 22
-        option(value='23') 23
-        option(value='24') 24
-        option(value='25') 25
-        option(value='26') 26
-        option(value='27') 27
-        option(value='28') 28
-        option(value='29') 29
-        option(value='30') 30
-        option(value='31') 31
-      select(name='startsOnYear')
-        option(value="")  - Year - 
-        option(value='2016') 2016
-        option(value='2017') 2017
-        option(value='2018') 2018
-    p 
-      label Days Long
-      br
-      input(type="number" name="daysLong")
-    p
-      label 
-        input(type='checkbox' name="repeats")
-        | Repeats Yearly?
-    p
-      label Retreat Web Address
-      br
-      input(name="url")
-    p
-      label Suggested Price
-      br
-      input(name="price")
-    p
-      label Address
-      br
-      input(name="address")
-    p
-      label City & State
-      br
-      input(name="cityState")
-    p
-      label Postal Code
-      br
-      input(name="postalCode")
-    p
-      label Country
-      br
-      input(name="country")
-    p
-      label Registrar's Phone Number
-      br
-      input(name="phone")
-    button Save
+    .row
+      .columns.six
+        legend Retreat Information
+        label Retreat Name*
+        input.u-full-width(type="text" name="name" autofocus='true' required)
+        label Link to Retreat Webpage (Url)*
+        input.u-full-width(type="url" name="url" placeholder="https://www.retreats.com/retreat/12" required)
+        .row
+          .columns.nine
+            label Starts On*
+            .row
+              .columns.five
+                select.u-full-width(name='startsOnMonth' required)
+                  option(value="")  - Month - 
+                  option(value='01') January
+                  option(value='02') Febuary
+                  option(value='03') March
+                  option(value='04') April
+                  option(value='05') May
+                  option(value='06') June
+                  option(value='07') July
+                  option(value='08') August
+                  option(value='09') September
+                  option(value='10') October
+                  option(value='11') November
+                  option(value='12') December
+              .columns.three
+                select.u-full-width(name='startsOnDay' required)
+                  option(value="")  - Day - 
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+                  option(value='6') 6
+                  option(value='7') 7
+                  option(value='8') 8
+                  option(value='9') 9
+                  option(value='10') 10
+                  option(value='11') 11
+                  option(value='12') 12
+                  option(value='13') 13
+                  option(value='14') 14
+                  option(value='15') 15
+                  option(value='16') 16
+                  option(value='17') 17
+                  option(value='18') 18
+                  option(value='19') 19
+                  option(value='20') 20
+                  option(value='21') 21
+                  option(value='22') 22
+                  option(value='23') 23
+                  option(value='24') 24
+                  option(value='25') 25
+                  option(value='26') 26
+                  option(value='27') 27
+                  option(value='28') 28
+                  option(value='29') 29
+                  option(value='30') 30
+                  option(value='31') 31
+              .columns.four
+                select.u-full-width(name='startsOnYear' required)
+                  option(value="")  - Year - 
+                  option(value='2016') 2016
+                  option(value='2017') 2017
+                  option(value='2018') 2018
+          .columns.three
+            label Days Long*
+            input.u-full-width(type="number" name="daysLong" required)
+        .row
+          .columns.twelve
+            label
+              input(type='checkbox' name="repeats")
+              | Retreat repeats yearly?
+        label Tradition
+        select.u-full-width(name='tradition')
+          option(value="")  - Select Tradition - 
+          option(value='Zen') Zen
+          option(value='Theravada') Theravada
+          option(value='Vipassana') Vipassana
+          option(value='Tibetan') Tibetan
+          option(value='MBSR') Mindfulness Based Stress Reduction (MBSR)
+          option(value='Hindu/Vedic') Hindu/Vedic
+          option(value='TM') Transcendental Meditation (TM)
+          option(value='Yogic') Yogic
+          option(value='Christian') Christian
+          option(value='Guided') Guided
+        label Teacher(s)
+        input.u-full-width(type="text" name="teacher")
+        label Suggested Price
+        input.u-full-width(type="text" name="price")
+      .columns.six
+        legend Center Information
+        label Meditation Center or Location Name*
+        input.u-full-width(type="text" name="center" required)
+        label Address
+        input.u-full-width(type="text" name="address")
+        label City & State
+        input.u-full-width(type="text" name="cityState")
+        label Postal Code
+        input.u-full-width(type="text" name="postalCode")
+        label Country
+        input.u-full-width(type="text" name="country")
+        label Registrar's Phone Number
+        input.u-full-width(type="text" name="phone")
+        label Registrar's Email Address
+        input.u-full-width(type="email" name="email")
+      .u-text-right
+        button.button.button-primary Publish Retreat

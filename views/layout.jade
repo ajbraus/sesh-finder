@@ -8,11 +8,19 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="HandheldFriendly" content="True")
     meta(name="MobileOptimized" content="320")
-
+    
+    link(rel='stylesheet', href='/vendor/skeleton-framework/dist/skeleton.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    h1 Sesh-finder
-    a(href="/") All
-    |  |  
-    a(href="/retreats/new") New
-    block content
+    .container       
+      .brand
+        a(href="/") Find My Sit
+        br
+        .u-text-muted Find Your Next Sitting Meditation Retreat
+      .u-pull-right
+        div
+          a.button(href="/") All Retreats 
+          | 
+          a.button.button-primary(href="/retreats/new") New Retreat
+    .container
+        block content

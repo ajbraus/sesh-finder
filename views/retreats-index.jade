@@ -12,7 +12,7 @@ block content
       th Tradition
       th Cost
     each retreat in retreats
-      tr(onclick="window.open('#{retreat.url}','_blank');")
+      tr(onclick="window.open('#{retreat.url}','_blank');" data-id="#{retreat._id}")
         td #{retreat.name}
         td #{retreat.center}
         td #{retreat.teacher}

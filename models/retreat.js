@@ -15,15 +15,17 @@ var RetreatSchema = new Schema({
   , startsOnYear        : Number
   , daysLong            : Number
   , url                 : String
-  , email               : String
   , repeats             : Boolean
   , price               : Number
-      
+
+  , email               : String
+  , phone               : String
+  
   , address             : String
   , cityState           : String
   , postalCode          : String
   , country             : String
-  , phone               : String
+  
 })
 
 RetreatSchema.pre('save', function(next){

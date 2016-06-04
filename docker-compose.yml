@@ -1,9 +1,13 @@
-web:
-  build: .
-  links:
-    - mongo
-  ports:
-    - "9000"
-    - "8081"
-mongo:
-  image: mongo
+version: '2'
+services:
+  db:
+    image: mongo
+  web:
+    build: .
+    command: /bin/bash /startup.sh
+    # volumes: 
+    #   - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

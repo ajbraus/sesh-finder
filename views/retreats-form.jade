@@ -89,7 +89,7 @@
     label Teacher(s)
     input.u-full-width(type="text" name="teacher" value="#{retreat.teacher || ''}")
     label Suggested Price
-    input.u-full-width(type="text" name="price" value="#{retreat.price || ''}")
+    input.u-full-width(type="text" name="price" placeholder="$400" value="#{retreat.price || ''}")
   .columns.six
     legend Center Information
     label Meditation Center or Location Name*
@@ -102,8 +102,8 @@
     input.u-full-width(type="text" name="postalCode" value="#{retreat.postalCode || ''}")
     label Country
     input.u-full-width(type="text" name="country" value="#{retreat.country || ''}")
-    label Registrar's Phone Number
-    input.u-full-width(type="text" name="phone" value="#{retreat.phone || ''}")
+    //- label Registrar's Phone Number
+    //- input.u-full-width(type="text" name="phone" value="#{retreat.phone || ''}")
     label Registrar's Email Address
     input.u-full-width(type="email" name="email" value="#{retreat.email || ''}")
   .u-text-right

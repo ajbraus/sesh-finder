@@ -25,7 +25,7 @@ router.put('/:id', function(req, res, next) {
 
 /* CREATE */
 router.post('/', function(req, res, next) {
-  console.log(req.body)
+  req.body.price = req.body.price.replace('$', '');
   req.body.startsOn = new Date(req.body.startsOnMonth + "-" + req.body.startsOnDay + "-" + req.body.startsOnYear);
   
   var retreat = new Retreat(req.body);

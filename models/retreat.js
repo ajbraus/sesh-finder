@@ -10,9 +10,9 @@ var RetreatSchema = new Schema({
   , tradition           : String
   , teacher             : String
   , startsOn            : Date
-  , startsOnMonth       : Number
-  , startsOnDay         : Number
-  , startsOnYear        : Number
+  , startsOnMonth       : String
+  , startsOnDay         : String
+  , startsOnYear        : String
   , daysLong            : Number
   , url                 : String
   , repeats             : Boolean

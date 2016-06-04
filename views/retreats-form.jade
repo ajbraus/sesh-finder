@@ -13,15 +13,15 @@
           .columns.five
             select.u-full-width(name="startsOnMonth" value="#{retreat.startsOnMonth || ''}" required)
               option(value="")  - Month - 
-              option(value='01') January
-              option(value='02') Febuary
-              option(value='03') March
-              option(value='04') April
-              option(value='05') May
-              option(value='06') June
-              option(value='07') July
-              option(value='08') August
-              option(value='09') September
+              option(value='1') January
+              option(value='2') Febuary
+              option(value='3') March
+              option(value='4') April
+              option(value='5') May
+              option(value='6') June
+              option(value='7') July
+              option(value='8') August
+              option(value='9') September
               option(value='10') October
               option(value='11') November
               option(value='12') December
@@ -67,14 +67,14 @@
               option(value='2018') 2018
       .columns.three
         label Days Long*
-        input.u-full-width(type="number" name="daysLong" value="#{retreat.daysLong || ''}" required)
+        input.u-full-width(type="number" name="daysLong" value="#{retreat.daysLong || ''}" required min='2')
     .row
       .columns.twelve
         label
           input(type='checkbox' name="repeats" value="#{retreat.repeats || ''}")
           | Retreat repeats yearly?
-    label Tradition
-    select.u-full-width(name="tradition" value="#{retreat.tradition || ''}" )
+    label Tradition*
+    select.u-full-width(name="tradition" value="#{retreat.tradition || ''}" required)
       option(value="")  - Select Tradition - 
       option(value='Zen') Zen
       option(value='Theravada') Theravada
@@ -88,20 +88,20 @@
       option(value='Guided') Guided
     label Teacher(s)
     input.u-full-width(type="text" name="teacher" value="#{retreat.teacher || ''}")
-    label Suggested Price
-    input.u-full-width(type="text" name="price" placeholder="$400" value="#{retreat.price || ''}")
+    label Suggested Price*
+    input.u-full-width(type="text" name="price" placeholder="$400" value="#{retreat.price || ''}" required)
   .columns.six
     legend Center Information
     label Meditation Center or Location Name*
     input.u-full-width(type="text" name="center" value="#{retreat.center || ''}" required)
-    label Address
-    input.u-full-width(type="text" name="address" value="#{retreat.address || ''}")
-    label City & State
-    input.u-full-width(type="text" name="cityState" value="#{retreat.cityState || ''}")
-    label Postal Code
-    input.u-full-width(type="text" name="postalCode" value="#{retreat.postalCode || ''}")
-    label Country
-    input.u-full-width(type="text" name="country" value="#{retreat.country || ''}")
+    label Address*
+    input.u-full-width(type="text" name="address" value="#{retreat.address || ''}" required)
+    label City & State*
+    input.u-full-width(type="text" name="cityState" value="#{retreat.cityState || ''}" required)
+    label Postal Code*
+    input.u-full-width(type="text" name="postalCode" value="#{retreat.postalCode || ''}" required)
+    label Country*
+    input.u-full-width(type="text" name="country" value="#{retreat.country || ''}" required)
     //- label Registrar's Phone Number
     //- input.u-full-width(type="text" name="phone" value="#{retreat.phone || ''}")
     label Registrar's Email Address

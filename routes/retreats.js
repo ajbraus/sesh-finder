@@ -9,6 +9,7 @@ router.get('/new', function(req, res, next) {
 
 router.get('/edit/:id', function(req, res, next) {
   Retreat.findById(req.params.id).exec(function(err, retreat) {
+    console.log(retreat)
     res.render('retreats-edit', { retreat: retreat });
   });
 });

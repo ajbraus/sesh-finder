@@ -31,3 +31,7 @@ td:last-child, th:last-child {
 .margin-top {
   margin-top:1rem;
 }
+
+td {
+  border-right: 1px solid #eee;
+}

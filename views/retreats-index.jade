@@ -3,23 +3,23 @@ extends layout
 block content
   table.u-full-width
     tr
-      th Name
+      th 
+      //- th Name
+      th Tradition
       th Center
+      th When
       th Teacher(s)
       th Where
-      th When
-      th Days
-      th Tradition
       th Cost
     each retreat in retreats
       tr(onclick="window.open('#{retreat.url}','_blank');" data-id="#{retreat._id}")
-        td #{retreat.name}
+        td #{retreat.daysLong} days
+        //- td #{retreat.name}
+        td #{retreat.tradition}
         td #{retreat.center}
+        td #{new Date(retreat.startsOn).toDateString()}
         td #{retreat.teacher}
         td #{retreat.cityState} #{retreat.country} 
-        td #{new Date(retreat.startsOn).toDateString()}
-        td #{retreat.daysLong}
-        td #{retreat.tradition}
         td $#{retreat.price}
         
         //- td 

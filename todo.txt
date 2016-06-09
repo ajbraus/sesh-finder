@@ -1,5 +1,8 @@
 filter/search
-remove ones that are over
+add google analytics
+add a carrot next to when
+
+DONE remove ones that are over
 
 tradition and starts on select not working
 DONE order retreats by date

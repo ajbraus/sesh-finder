@@ -1,4 +1,6 @@
-tradition and starts on not working
+filter/search
+
+tradition and starts on select not working
 DONE order retreats by date
 DONE SEO optimziation
 

@@ -1,4 +1,5 @@
 filter/search
+remove ones that are over
 
 tradition and starts on select not working
 DONE order retreats by date

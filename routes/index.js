@@ -4,7 +4,9 @@ var Retreat = require('../models/retreat.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Retreat.find()
+  d = new Date()
+  
+  Retreat.find({ "startsOn": { "$gte": d } })
          .sort('startsOn')
          .exec(function(err, retreats) {
     res.render('retreats-index', { retreats: retreats });  

@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 var Retreat = require('../models/retreat.js')
 
-/* NEW  */
+// NEW
 router.get('/new', function(req, res, next) {
   res.render('retreats-new', { retreat: new Retreat() });
 });
 
+// EDIT
 router.get('/edit/:id', function(req, res, next) {
   Retreat.findById(req.params.id).exec(function(err, retreat) {
     console.log(retreat)
@@ -14,6 +15,7 @@ router.get('/edit/:id', function(req, res, next) {
   });
 });
 
+// UPDATE
 router.put('/:id', function(req, res, next) {
   Retreat.findById(req.params.id).exec(function(err, retreat) {
     req.body.startsOn = new Date(req.body.startsOnMonth + "-" + req.body.startsOnDay + "-" + req.body.startsOnYear);

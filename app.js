@@ -39,6 +39,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var retreats = require('./routes/retreats');

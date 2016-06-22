@@ -1,6 +1,10 @@
 filter/search
-add google analytics
-add a carrot next to when
+facebook, twitter, and reddit share buttons
+map view
+
+DONE add google analytics
+DONE retreat count
+DONE add a carrot next to when
 
 DONE remove ones that are over
 

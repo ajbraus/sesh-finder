@@ -7,6 +7,43 @@
   text-decoration: none;
   color:inherit;
 }
+
+.share {
+  padding-left:10px;
+}
+
+.button-share {
+  line-height: inherit;
+  height:inherit;
+  padding:2px 15px;
+  width:54px;
+  font-size:19px;
+  margin:0 5px 5px 0px;
+  border:none;
+}
+
+.button-facebook {
+  background-color: #3b5998;
+  border-color: #2d5073;
+  color:white;
+}
+
+.button-twitter {
+  background-color: #55ACEE;
+  border-color: #55ACEE;
+  color:white;
+}
+
+.button-share:hover {
+  color:white;
+}
+.button-twitter:hover {
+  background: #5cb8ff;
+}
+.button-facebook:hover { 
+  background-color: #4567ae;
+}
+
 legend {
   padding: 0 0 5px 0;
   font-size: 1.3em;

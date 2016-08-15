@@ -1,6 +1,7 @@
-filter/search
+add og tags
 facebook, twitter, and reddit share buttons
 map view
+filter/search
 
 DONE add google analytics
 DONE retreat count
@@ -13,3 +14,4 @@ DONE order retreats by date
 DONE SEO optimziation
 
 Tell gertrude to find 25 sits
+Write contact email and have gertrude send it to all the organizations whose retreats are posted
